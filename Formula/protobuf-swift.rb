@@ -20,6 +20,8 @@ class ProtobufSwift < Formula
   # Reported 16 Aug 2017 https://github.com/alexeyxo/protobuf-swift/issues/217
   depends_on "protobuf@3.1"
 
+  conflicts_with "swift-protobuf", :because => "both install `protoc-gen-swift`"
+
   def install
     system "protoc", "-Iplugin/compiler",
                      "plugin/compiler/google/protobuf/descriptor.proto",
